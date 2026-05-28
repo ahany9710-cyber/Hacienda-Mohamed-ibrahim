@@ -6,17 +6,12 @@ function buildCspDirectives(): string {
   const clarityScript = "https://www.clarity.ms https://scripts.clarity.ms";
   const clarityConnect =
     "https://*.clarity.ms https://c.bing.com https://www.clarity.ms";
-  // Google Ads / gtag (same layout as Clarity)
-  const googleAnalytics =
-    "https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com";
-  const googleConnect =
-    "https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://googleads.g.doubleclick.net";
 
   const parts = [
     "default-src 'self'",
-    `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${clarityScript} ${googleAnalytics}`,
+    `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${clarityScript}`,
     // Dev: allow Turbopack / HMR WebSockets (same host, different scheme)
-    `connect-src 'self' https://formspree.io ${clarityConnect} ${googleConnect}${
+    `connect-src 'self' https://formspree.io ${clarityConnect}${
       process.env.NODE_ENV !== "production" ? " ws: wss:" : ""
     }`,
     "img-src 'self' data: blob: https: https://c.clarity.ms",
