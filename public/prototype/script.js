@@ -9,7 +9,7 @@ const I18N = {
     callLabel: "اتصل بنا",
     nameRequired: "من فضلك اكتب اسمك",
     phoneRequired: "رقم الموبايل مطلوب",
-    phoneInvalid: "رقم موبايل غير صحيح",
+    phoneInvalid: "أدخل رقم هاتف صحيح (١١ رقم على الأقل، مع أو بدون كود الدولة)",
     submitting: "جاري الإرسال…",
     project: "هاسيندا راس الحكمة",
     formError: "تعذر الإرسال — جرّب واتساب",
@@ -20,7 +20,7 @@ const I18N = {
     callLabel: "Call us",
     nameRequired: "Please enter your name",
     phoneRequired: "Mobile number is required",
-    phoneInvalid: "Please enter a valid Egyptian mobile number",
+    phoneInvalid: "Enter a valid phone number (at least 11 digits, with or without country code)",
     submitting: "Sending…",
     project: "Hacienda Ras El Hekma",
     formError: "Could not send — try WhatsApp",
@@ -128,6 +128,18 @@ function hydrateLinksPage() {
   });
 }
 
+function normalizePhoneInput(raw) {
+  return String(raw || "").trim().replace(/\s/g, "");
+}
+
+function phoneDigitCount(phone) {
+  return phone.replace(/\D/g, "").length;
+}
+
+function isValidPhoneInput(phone) {
+  return phoneDigitCount(phone) >= 11;
+}
+
 function setupLeadForm({ formId, successId, source, ctaId, compact = false, onSuccess }) {
   const form = document.getElementById(formId);
   if (!form) return;
@@ -157,7 +169,8 @@ function setupLeadForm({ formId, successId, source, ctaId, compact = false, onSu
     if (errs.form) errs.form.textContent = "";
 
     const name = fields.name?.value.trim() || "";
-    const phone = fields.phone?.value.trim().replace(/\s/g, "") || "";
+    const phone = normalizePhoneInput(fields.phone?.value);
+    const alt = normalizePhoneInput(fields.altPhone?.value);
     let ok = true;
 
     if (!name) {
@@ -167,7 +180,10 @@ function setupLeadForm({ formId, successId, source, ctaId, compact = false, onSu
     if (!phone) {
       if (errs.phone) errs.phone.textContent = STR.phoneRequired;
       ok = false;
-    } else if (!/^01\d{9}$/.test(phone)) {
+    } else if (!isValidPhoneInput(phone)) {
+      if (errs.phone) errs.phone.textContent = STR.phoneInvalid;
+      ok = false;
+    } else if (alt && !isValidPhoneInput(alt)) {
       if (errs.phone) errs.phone.textContent = STR.phoneInvalid;
       ok = false;
     }
@@ -186,7 +202,6 @@ function setupLeadForm({ formId, successId, source, ctaId, compact = false, onSu
       source,
       locale: LOCALE,
     };
-    const alt = fields.altPhone?.value.trim().replace(/\s/g, "");
     if (alt) payload.alt_phone = alt;
 
     try {
