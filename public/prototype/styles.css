@@ -1077,6 +1077,13 @@ button { font: inherit; cursor: pointer; }
   color: var(--terracotta);
   line-height: 1;
 }
+.feature-pay {
+  margin: 0;
+  font-family: var(--f-ar);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--terracotta-d);
+}
 .feature-spec {
   font-family: var(--f-ar);
   font-size: 15px;
@@ -1142,11 +1149,200 @@ button { font: inherit; cursor: pointer; }
   text-transform: uppercase;
   color: var(--ink-mute);
 }
+.unit-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+}
+.unit-price .from {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.unit-price .val {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--terracotta);
+}
+.unit-pay {
+  font-family: var(--f-ar);
+  font-weight: 500;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* FULL PRICE LIST */
+.price-table {
+  margin-top: clamp(40px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+}
+.price-group {
+  background: var(--bone);
+  border: 1px solid var(--hairline);
+  padding: clamp(22px, 2.4vw, 30px);
+  display: flex;
+  flex-direction: column;
+}
+.price-group-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--hairline);
+}
+.pg-title {
+  font-family: var(--f-ar);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--ink);
+}
+.pg-sub {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.price-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.price-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline-2);
+}
+.price-item:last-child { border-bottom: none; padding-bottom: 0; }
+.pi-name {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--f-ar);
+  font-weight: 500;
+  font-size: 15.5px;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.pi-name small {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 400;
+}
+.pi-price {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: end;
+}
+.pi-val {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--terracotta);
+  white-space: nowrap;
+}
+.pi-price i {
+  font-family: var(--f-mono);
+  font-style: normal;
+  font-size: 9.5px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-inline-end: 4px;
+}
+.pi-pay {
+  font-family: var(--f-ar);
+  font-weight: 500;
+  font-size: 11.5px;
+  line-height: 1.3;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* PRICE FOOTER + EOI */
+.price-foot {
+  margin-top: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.eoi-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  padding: 16px 20px;
+  background: var(--ink);
+  color: var(--bone);
+}
+.eoi-title {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: #E8B89C;
+  margin-inline-end: 6px;
+}
+.eoi-item {
+  font-family: var(--f-ar);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--bone);
+  padding-inline-end: 18px;
+  border-inline-end: 1px solid rgba(246,241,232,.22);
+}
+.eoi-item:last-child { border-inline-end: none; padding-inline-end: 0; }
+.price-note {
+  font-family: var(--f-ar);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-mute);
+  margin: 0;
+}
+
 @media (max-width: 860px) {
-  .feature { grid-template-columns: 1fr; }
-  .feature-img { border-inline-start: none; border-top: 1px solid var(--hairline); }
+  .feature {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .feature-img {
+    order: -1;
+    border-inline-start: none;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .feature-body { padding: clamp(24px, 6vw, 36px); }
   .unit-row { grid-template-columns: 1fr; }
   .res-head { grid-template-columns: 1fr; }
+  .price-table { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .price-item { gap: 10px; }
+  .pi-val { font-size: 18px; }
+  .pi-pay { font-size: 10.5px; }
 }
 
 /* ============================================================
@@ -1337,6 +1533,68 @@ button { font: inherit; cursor: pointer; }
   min-height: 1em;
 }
 .form-submit { margin-top: 8px; }
+
+/* Lead + popup CTA — subtle pulse + shimmer to draw clicks */
+#lead-form .form-submit-cta,
+#popup-lead-form .form-submit-cta {
+  position: relative;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 1.35;
+  text-align: center;
+  animation: leadCtaPulse 2.6s ease-in-out infinite;
+}
+#lead-form .form-submit-cta::after,
+#popup-lead-form .form-submit-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 247, 240, 0.28) 50%,
+    transparent 62%
+  );
+  transform: translateX(-130%);
+  animation: leadCtaShimmer 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+#lead-form .form-submit-cta:hover,
+#popup-lead-form .form-submit-cta:hover {
+  transform: translateY(-2px);
+  animation: none;
+  box-shadow: 0 10px 28px rgba(198, 106, 75, 0.35);
+}
+#lead-form .form-submit-cta:active,
+#popup-lead-form .form-submit-cta:active {
+  transform: translateY(0);
+}
+@keyframes leadCtaPulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(198, 106, 75, 0.18);
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px rgba(198, 106, 75, 0.14),
+      0 8px 26px rgba(198, 106, 75, 0.28);
+  }
+}
+@keyframes leadCtaShimmer {
+  0%, 72%, 100% { transform: translateX(-130%); }
+  28% { transform: translateX(130%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #lead-form .form-submit-cta,
+  #popup-lead-form .form-submit-cta,
+  #lead-form .form-submit-cta::after,
+  #popup-lead-form .form-submit-cta::after {
+    animation: none;
+  }
+  #lead-form .form-submit-cta:hover,
+  #popup-lead-form .form-submit-cta:hover {
+    transform: none;
+  }
+}
 .form-privacy {
   margin-top: 14px;
   font-family: var(--f-mono);

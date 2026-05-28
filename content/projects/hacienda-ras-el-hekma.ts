@@ -16,7 +16,7 @@ export const HACIENDA = {
   WHATSAPP_NUMBER: "201159452508",
   PHONE: "201159452508",
 
-  LEAD_ENDPOINT: "https://formspree.io/f/xkoeneel",
+  LEAD_ENDPOINT: "https://formspree.io/f/mkoeyvew",
 
   logos: {
     developerOnDark: "/hacienda/logos/palm-hills-official.png",
@@ -37,12 +37,12 @@ export const HACIENDA = {
     heroAlt: "هاسيندا راس الحكمة — render رسمي من البروشور",
   },
 
-  /** TODO: confirm all starting prices against official Palm Hills launch sheet */
+  /** Official launch prices (starting from, subject to change by developer) */
   prices: {
     apartment: "من ١١.٥ مليون",
     chalet: "من ٢٤ مليون",
     twin: "من ٤٤ مليون",
-    ultraVilla: "من ١٦٥ مليون",
+    ultraVilla: "من ٤٥٠ مليون",
     branded: "اسأل عن الأسعار",
   },
 

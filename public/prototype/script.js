@@ -33,7 +33,7 @@ const STR = I18N[LOCALE];
 
 const CONFIG = {
   WHATSAPP_NUMBER: "201159452508",
-  LEAD_ENDPOINT: "https://formspree.io/f/xdajdyzd",
+  LEAD_ENDPOINT: "https://formspree.io/f/mkoeyvew",
   TEL_HREF: "tel:+201159452508",
   POPUP_SCROLL_THRESHOLD: 0.75,
   POPUP_DELAY_MS: 15000,
@@ -259,15 +259,18 @@ function setupLeadPopup() {
     return leadSection.getBoundingClientRect().top < window.innerHeight * 0.85;
   }
 
-  function openPopup(trigger) {
-    if (opened || shouldSkipPopup() || isNearLeadForm()) return;
+  function openPopup(trigger, { force = false } = {}) {
+    if (opened) return;
+    if (!force && (shouldSkipPopup() || isNearLeadForm())) return;
 
     opened = true;
     disposeTriggers();
 
-    try {
-      sessionStorage.setItem(POPUP_STORAGE_KEY, "1");
-    } catch (_) {}
+    if (!force) {
+      try {
+        sessionStorage.setItem(POPUP_STORAGE_KEY, "1");
+      } catch (_) {}
+    }
 
     popup.hidden = false;
     popup.setAttribute("aria-hidden", "false");
@@ -307,7 +310,16 @@ function setupLeadPopup() {
 
   popupDisposeTriggers = disposeTriggers;
 
-  if (!shouldSkipPopup()) {
+  const params = new URLSearchParams(window.location.search);
+  const forcePopup = params.get("popup") === "1" || window.location.hash === "#popup";
+
+  if (forcePopup) {
+    try {
+      sessionStorage.removeItem(POPUP_STORAGE_KEY);
+      sessionStorage.removeItem(LEAD_SUBMITTED_KEY);
+    } catch (_) {}
+    setTimeout(() => openPopup("preview", { force: true }), 400);
+  } else if (!shouldSkipPopup()) {
     window.addEventListener("scroll", onScrollCheck, scrollOpts);
     onScrollCheck();
     timerId = setTimeout(() => {
@@ -316,7 +328,7 @@ function setupLeadPopup() {
     }, CONFIG.POPUP_DELAY_MS);
   }
 
-  return { closePopup, disposeTriggers };
+  return { closePopup, disposeTriggers, openPopup };
 }
 
 document.addEventListener("click", (e) => {
