@@ -2,7 +2,7 @@
 
 Landing page for **Hacienda Ras El Hekma** (Palm Hills, North Coast).
 
-- **Live:** [hacienda-ivory.vercel.app](https://hacienda-ivory.vercel.app)
+- **Live:** [offers-palmhills.com](https://offers-palmhills.com)
 - **Repo:** [github.com/ahany9710-cyber/Hacienda-Mohamed-ibrahim](https://github.com/ahany9710-cyber/Hacienda-Mohamed-ibrahim)
 
 ## Tech Stack
