@@ -7,9 +7,12 @@ function buildCspDirectives(): string {
   const clarityConnect =
     "https://*.clarity.ms https://c.bing.com https://www.clarity.ms";
   // Google Ads gtag.js: https://developers.google.com/tag-platform/security/guides/csp
-  const googleTagScript = "https://www.googletagmanager.com";
+  const googleTagScript =
+    "https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net";
   const googleTagConnect =
-    "https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google-analytics.com https://*.google-analytics.com";
+    "https://www.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google-analytics.com https://*.google-analytics.com";
+  const googleTagFrame =
+    "https://www.googletagmanager.com https://td.doubleclick.net https://googleads.g.doubleclick.net";
 
   const parts = [
     "default-src 'self'",
@@ -22,7 +25,7 @@ function buildCspDirectives(): string {
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' data: https://fonts.gstatic.com",
     "media-src 'self' blob:",
-    "frame-src 'self'",
+    `frame-src 'self' ${googleTagFrame}`,
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
