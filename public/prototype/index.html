@@ -6,7 +6,7 @@
 <title>هاسيندا راس الحكمة | مدينة بالم هيلز الساحلية على المتوسط</title>
 <meta name="description" content="مدينة بالم هيلز الساحلية المتكاملة على كيلو ٢٣٨ بشراكة Miran Hills — ١٬٤٠٠ فدان، شاطئ ٤.٨ كم، و٨٦٪ من المساحة حدائق ومياه. ابدأ بـ٥٪ مقدم." />
 
-<link rel="preload" as="image" href="/hacienda/brochure/hero-render.webp" fetchpriority="high" />
+<link rel="preload" as="image" fetchpriority="high" href="/hacienda/brochure/hero-render-1400.webp" imagesrcset="/hacienda/brochure/hero-render-768.webp 768w, /hacienda/brochure/hero-render-1400.webp 1400w, /hacienda/brochure/hero-render.webp 2200w" imagesizes="100vw" />
 <link rel="preload" as="font" type="font/woff2" href="/prototype/fonts/reemkufi_2sDcZGJLip7W2J7v7wQzbWW5Kb8VZBHR.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="/prototype/fonts/ibmplexsansarabic_Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys43PW5fslBEg0.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="/prototype/fonts/fraunces_6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2" crossorigin />
@@ -70,7 +70,7 @@
 ============================================================ -->
 <section class="hero" id="hero">
   <picture class="hero-bg" aria-hidden="true">
-    <source srcset="/hacienda/brochure/hero-render.webp" type="image/webp" />
+    <source type="image/webp" srcset="/hacienda/brochure/hero-render-768.webp 768w, /hacienda/brochure/hero-render-1400.webp 1400w, /hacienda/brochure/hero-render.webp 2200w" sizes="100vw" />
     <img src="/hacienda/brochure/hero-render.jpg" alt="" width="2200" height="1242" fetchpriority="high" decoding="async" />
   </picture>
   <div class="hero-veil" aria-hidden="true"></div>
@@ -717,11 +717,11 @@
         <span class="calc-sub">Instant — Indicative — Pending Confirmation</span>
         <div class="calc-controls">
           <div class="calc-row">
-            <label>
+            <label for="calc-price">
               <span class="ar">سعر الوحدة</span>
               <span class="val" id="calc-price-out">٢٥ مليون</span>
             </label>
-            <input type="range" id="calc-price" min="11" max="450" step="1" value="25" />
+            <input type="range" id="calc-price" min="11" max="450" step="1" value="25" aria-label="سعر الوحدة بالمليون جنيه" />
           </div>
           <div class="calc-row">
             <label><span class="ar">نوع الوحدة</span></label>

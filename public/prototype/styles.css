@@ -7,8 +7,8 @@
   --pearl:       #FAF6EE;
   --ink:         #1B3A4B;     /* deep teal-navy — NOT pure black */
   --ink-2:       #2D4A5A;
-  --ink-soft:    rgba(27, 58, 75, 0.72);
-  --ink-mute:    rgba(27, 58, 75, 0.55);
+  --ink-soft:    rgba(27, 58, 75, 0.82);
+  --ink-mute:    rgba(27, 58, 75, 0.68);
   --ink-faint:   rgba(27, 58, 75, 0.32);
   --hairline:    rgba(27, 58, 75, 0.14);
   --hairline-2:  rgba(27, 58, 75, 0.08);
@@ -1550,6 +1550,8 @@ button { font: inherit; cursor: pointer; }
   white-space: normal;
   line-height: 1.35;
   text-align: center;
+  box-shadow: 0 4px 16px rgba(198, 106, 75, 0.22);
+  will-change: transform;
   animation: leadCtaPulse 2.6s ease-in-out infinite;
 }
 #lead-form .form-submit-cta::after,
@@ -1578,14 +1580,8 @@ button { font: inherit; cursor: pointer; }
   transform: translateY(0);
 }
 @keyframes leadCtaPulse {
-  0%, 100% {
-    box-shadow: 0 2px 8px rgba(198, 106, 75, 0.18);
-  }
-  50% {
-    box-shadow:
-      0 0 0 4px rgba(198, 106, 75, 0.14),
-      0 8px 26px rgba(198, 106, 75, 0.28);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.018); }
 }
 @keyframes leadCtaShimmer {
   0%, 72%, 100% { transform: translateX(-130%); }
