@@ -15,6 +15,34 @@
   document.querySelectorAll('.fade-in').forEach(function (el) { io.observe(el); });
 })();
 
+// Lazy background images keep the hero image first in the network queue.
+(function () {
+  var els = [].slice.call(document.querySelectorAll('[data-bg]'));
+  if (!els.length) return;
+
+  function load(el) {
+    var src = el.getAttribute('data-bg');
+    if (!src) return;
+    el.style.backgroundImage = "url('" + src + "')";
+    el.removeAttribute('data-bg');
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(load);
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      load(entry.target);
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: '700px 0px' });
+
+  els.forEach(function (el) { io.observe(el); });
+})();
+
 // ============================================================
 // INSTALLMENT CALCULATOR
 // ============================================================
@@ -84,11 +112,22 @@
 (function () {
   var label = document.getElementById('wa-label');
   if (!label) return;
-  setTimeout(function () { label.classList.add('show'); }, 2500);
-  setTimeout(function () { label.classList.remove('show'); }, 8500);
-  // re-show every ~40s
-  setInterval(function () {
-    label.classList.add('show');
-    setTimeout(function () { label.classList.remove('show'); }, 5000);
-  }, 45000);
+
+  function schedule(fn, timeout) {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(fn, { timeout: timeout });
+      return;
+    }
+    setTimeout(fn, timeout);
+  }
+
+  schedule(function () {
+    setTimeout(function () { label.classList.add('show'); }, 2500);
+    setTimeout(function () { label.classList.remove('show'); }, 8500);
+    // Re-show occasionally, after the page has settled.
+    setInterval(function () {
+      label.classList.add('show');
+      setTimeout(function () { label.classList.remove('show'); }, 5000);
+    }, 45000);
+  }, 3500);
 })();

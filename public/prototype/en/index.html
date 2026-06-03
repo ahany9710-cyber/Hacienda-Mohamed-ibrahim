@@ -8,6 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="image" href="/hacienda/brochure/hero-render.webp" fetchpriority="high" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
 
 <link rel="stylesheet" href="/prototype/styles.css" />
@@ -67,7 +68,10 @@
      2 · HERO
 ============================================================ -->
 <section class="hero" id="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <picture class="hero-bg" aria-hidden="true">
+    <source srcset="/hacienda/brochure/hero-render.webp" type="image/webp" />
+    <img src="/hacienda/brochure/hero-render.jpg" alt="" width="2200" height="1242" fetchpriority="high" decoding="async" />
+  </picture>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="hero-frame" aria-hidden="true"></div>
   <span class="hero-corner tl" dir="ltr">N 31°02' · E 27°51'</span>
@@ -207,7 +211,7 @@
 <section class="section developer" id="developer">
   <div class="wrap">
     <div class="dev-grid fade-in">
-      <div class="dev-img" style="background-image:url('/hacienda/brochure/cover.webp')">
+      <div class="dev-img" data-bg="/hacienda/brochure/cover.webp">
         <span class="cap">Palm Hills · 25+ Years on Egypt's Coast</span>
       </div>
       <div class="dev-body">
@@ -332,7 +336,7 @@
           <div class="distance"><span class="km">238</span><span class="lbl">Hacienda Ras El Hekma</span></div>
         </div>
       </div>
-      <div class="location-map" style="background-image:url('/hacienda/brochure/location-map.webp')" role="img" aria-label="Hacienda Ras El Hekma location map"></div>
+      <div class="location-map" data-bg="/hacienda/brochure/location-map.webp" role="img" aria-label="Hacienda Ras El Hekma location map"></div>
     </div>
   </div>
 </section>
@@ -353,42 +357,42 @@
 
     <div class="gallery fade-in">
       <div class="gal gal-shore">
-        <div class="img" style="background-image:url('/hacienda/brochure/shoreline.webp')"></div>
+        <div class="img" data-bg="/hacienda/brochure/shoreline.webp"></div>
         <div class="meta">
           <div class="label"><span>Shoreline</span><span class="ar">٤.٨ كم شاطئ متوسطي</span></div>
           <div class="num">01</div>
         </div>
       </div>
       <div class="gal gal-master">
-        <div class="img" style="background-image:url('/hacienda/brochure/masterplan.webp')"></div>
+        <div class="img" data-bg="/hacienda/brochure/masterplan.webp"></div>
         <div class="meta">
           <div class="label"><span>Masterplan</span><span class="ar">الماستر بلان</span></div>
           <div class="num">02</div>
         </div>
       </div>
       <div class="gal gal-core">
-        <div class="img" style="background-image:url('/hacienda/brochure/amenities.webp')"></div>
+        <div class="img" data-bg="/hacienda/brochure/amenities.webp"></div>
         <div class="meta">
           <div class="label"><span>The Core</span><span class="ar">ريتيل ومطاعم</span></div>
           <div class="num">04</div>
         </div>
       </div>
       <div class="gal gal-marina">
-        <div class="img" style="background-image:url('/hacienda/brochure/ecosystem.webp')"></div>
+        <div class="img" data-bg="/hacienda/brochure/ecosystem.webp"></div>
         <div class="meta">
           <div class="label"><span>Marina</span><span class="ar">المارينا الدولية · Palm Hills</span></div>
           <div class="num">05</div>
         </div>
       </div>
       <div class="gal gal-club">
-        <div class="img" style="background-image:url('/hacienda/brochure/sports.webp')"></div>
+        <div class="img" data-bg="/hacienda/brochure/sports.webp"></div>
         <div class="meta">
           <div class="label"><span>Sports &amp; Wellness</span><span class="ar">Palm Hills Sporting Club</span></div>
           <div class="num">06</div>
         </div>
       </div>
       <div class="gal gal-parks">
-        <div class="img" style="background-image:url('/hacienda/brochure/parks.webp')"></div>
+        <div class="img" data-bg="/hacienda/brochure/parks.webp"></div>
         <div class="meta">
           <div class="label"><span>Gardens &amp; Landscape</span><span class="ar">الحدائق واللاندسكيب</span></div>
           <div class="num">03</div>
@@ -404,7 +408,7 @@
 <section class="section principles">
   <div class="wrap">
     <div class="principles-grid fade-in">
-      <div class="principles-img" style="background-image:url('/hacienda/brochure/landscape-quote.webp')">
+      <div class="principles-img" data-bg="/hacienda/brochure/landscape-quote.webp">
         <span class="tag">DESIGN · 06</span>
       </div>
       <div class="principles-body">
@@ -432,7 +436,7 @@
     </div>
     <div class="legacy-grid fade-in">
       <div class="legacy-card">
-        <div class="legacy-thumb" style="background-image:url('/hacienda/bay/photos/01.webp')">
+        <div class="legacy-thumb" data-bg="/hacienda/bay/photos/01.webp">
           <span class="legacy-num">/ 01</span>
         </div>
         <div class="legacy-meta">
@@ -441,7 +445,7 @@
         </div>
       </div>
       <div class="legacy-card">
-        <div class="legacy-thumb" style="background-image:url('/hacienda/white/photos/01.webp')">
+        <div class="legacy-thumb" data-bg="/hacienda/white/photos/01.webp">
           <span class="legacy-num">/ 02</span>
         </div>
         <div class="legacy-meta">
@@ -450,7 +454,7 @@
         </div>
       </div>
       <div class="legacy-card">
-        <div class="legacy-thumb" style="background-image:url('/hacienda/blue/photos/01.webp')">
+        <div class="legacy-thumb" data-bg="/hacienda/blue/photos/01.webp">
           <span class="legacy-num">/ 03</span>
         </div>
         <div class="legacy-meta">
@@ -459,7 +463,7 @@
         </div>
       </div>
       <div class="legacy-card">
-        <div class="legacy-thumb" style="background-image:url('/hacienda/red/photos/01.webp')">
+        <div class="legacy-thumb" data-bg="/hacienda/red/photos/01.webp">
           <span class="legacy-num">/ 04</span>
         </div>
         <div class="legacy-meta">
@@ -468,7 +472,7 @@
         </div>
       </div>
       <div class="legacy-card">
-        <div class="legacy-thumb" style="background-image:url('/hacienda/white/photos/07.webp')">
+        <div class="legacy-thumb" data-bg="/hacienda/white/photos/07.webp">
           <span class="legacy-num">/ 05</span>
         </div>
         <div class="legacy-meta">
@@ -517,14 +521,14 @@
           </a>
         </div>
       </div>
-      <div class="feature-img" style="background-image:url('/hacienda/brochure/unit-ultra-villa.webp')">
+      <div class="feature-img" data-bg="/hacienda/brochure/unit-ultra-villa.webp">
         <span class="tag">SHORELINE VILLA · 01</span>
       </div>
     </article>
 
     <div class="unit-row fade-in">
       <div class="unit-card">
-        <div class="unit-thumb" style="background-image:url('/hacienda/brochure/unit-apartment.webp')"><span class="tag">02 · Apartment</span></div>
+        <div class="unit-thumb" data-bg="/hacienda/brochure/unit-apartment.webp"><span class="tag">02 · Apartment</span></div>
         <div class="unit-body">
           <span class="unit-name">Apartments &amp; Residences</span>
           <span class="unit-meta">1 – 4 BR · Beach Homes</span>
@@ -533,7 +537,7 @@
         </div>
       </div>
       <div class="unit-card">
-        <div class="unit-thumb" style="background-image:url('/hacienda/brochure/unit-chalet.webp')"><span class="tag">03 · Chalet</span></div>
+        <div class="unit-thumb" data-bg="/hacienda/brochure/unit-chalet.webp"><span class="tag">03 · Chalet</span></div>
         <div class="unit-body">
           <span class="unit-name">Chalets</span>
           <span class="unit-meta">Junior · Senior</span>
@@ -542,7 +546,7 @@
         </div>
       </div>
       <div class="unit-card">
-        <div class="unit-thumb" style="background-image:url('/hacienda/brochure/unit-twin.webp')"><span class="tag">04 · Twin</span></div>
+        <div class="unit-thumb" data-bg="/hacienda/brochure/unit-twin.webp"><span class="tag">04 · Twin</span></div>
         <div class="unit-body">
           <span class="unit-name">Twin Houses</span>
           <span class="unit-meta">The Duo</span>
