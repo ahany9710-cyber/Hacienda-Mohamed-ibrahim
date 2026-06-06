@@ -12,9 +12,9 @@ export const HACIENDA = {
   developer: "بالم هيلز",
   slug: "hacienda-ras-el-hekma",
 
-  /** E.164 digits only (01159452508) — used for tel: and WhatsApp */
-  WHATSAPP_NUMBER: "201159452508",
-  PHONE: "201159452508",
+  /** E.164 digits only (01008900076) — used for tel: and WhatsApp */
+  WHATSAPP_NUMBER: "201008900076",
+  PHONE: "201008900076",
 
   LEAD_ENDPOINT: "https://formspree.io/f/mkoeyvew",
 

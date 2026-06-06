@@ -88,7 +88,7 @@
 
     // Pre-fill WhatsApp with the calculator state
     var msg = 'محتاج تفاصيل أكتر عن قسط وحدة بـ ' + priceM + ' مليون جنيه — ' + years + ' سنين تقسيط · هاسيندا راس الحكمة';
-    if (typeof window.hhWaUrl === 'function') { cta.href = window.hhWaUrl('default', msg); } else { cta.href = 'https://wa.me/201159452508?text=' + encodeURIComponent(msg); }
+    if (typeof window.hhWaUrl === 'function') { cta.href = window.hhWaUrl('default', msg); } else { cta.href = 'https://wa.me/201008900076?text=' + encodeURIComponent(msg); }
   }
 
   priceInput.addEventListener('input', update);
