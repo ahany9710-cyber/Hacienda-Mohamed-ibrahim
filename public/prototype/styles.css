@@ -1186,6 +1186,21 @@ button { font: inherit; cursor: pointer; }
   font-size: 12.5px;
   color: var(--ink-soft);
 }
+.unit-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.unit-ctas .btn.sm {
+  padding: 8px 12px;
+  font-size: 12px;
+  gap: 6px;
+}
+.unit-ctas .btn.sm .icon {
+  width: 15px;
+  height: 15px;
+}
 
 /* FULL PRICE LIST */
 .price-table {
@@ -1290,6 +1305,13 @@ button { font: inherit; cursor: pointer; }
   color: var(--ink-soft);
   white-space: nowrap;
 }
+.pi-right {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
 
 /* PRICE FOOTER + EOI */
 .price-foot {
@@ -1348,9 +1370,16 @@ button { font: inherit; cursor: pointer; }
   .price-table { grid-template-columns: 1fr; }
 }
 @media (max-width: 420px) {
-  .price-item { gap: 10px; }
+  .price-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .pi-right { align-items: stretch; }
+  .pi-price { align-items: flex-start; text-align: start; }
+  .unit-ctas .btn.sm { flex: 1; min-width: 0; }
   .pi-val { font-size: 18px; }
-  .pi-pay { font-size: 10.5px; }
+  .pi-pay { font-size: 10.5px; white-space: normal; }
 }
 
 /* ============================================================

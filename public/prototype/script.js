@@ -103,7 +103,7 @@ function setupLangToggle() {
 function hydrateLinks(root = document) {
   root.querySelectorAll("[data-wa]").forEach((el) => {
     const preset = el.dataset.wa || "default";
-    el.setAttribute("href", waUrl(preset));
+    el.setAttribute("href", waUrl(preset, el.dataset.waMsg));
     if (el.dataset.waBound) return;
     el.dataset.waBound = "1";
     const cta = el.dataset.cta;
@@ -145,8 +145,14 @@ function setupLeadForm({ formId, successId, source, ctaId, compact = false, onSu
   if (!form) return;
 
   const successPanel = successId ? document.getElementById(successId) : null;
-  const prefix = formId === "popup-lead-form" ? "pf" : "f";
-  const errPrefix = formId === "popup-lead-form" ? "err-pf" : "err";
+  const prefix =
+    formId === "popup-lead-form" ? "pf" : formId === "lead-form-bottom" ? "fb" : "f";
+  const errPrefix =
+    formId === "popup-lead-form"
+      ? "err-pf"
+      : formId === "lead-form-bottom"
+        ? "err-fb"
+        : "err";
 
   const fields = {
     name: form.querySelector(`#${prefix}-name`),
@@ -367,6 +373,13 @@ document.addEventListener("DOMContentLoaded", () => {
     successId: "lead-success",
     source: "hacienda_home",
     ctaId: "form_submit",
+  });
+
+  setupLeadForm({
+    formId: "lead-form-bottom",
+    successId: "lead-bottom-success",
+    source: "hacienda_home_bottom",
+    ctaId: "form_submit_bottom",
   });
 
   const popupApi = setupLeadPopup();
