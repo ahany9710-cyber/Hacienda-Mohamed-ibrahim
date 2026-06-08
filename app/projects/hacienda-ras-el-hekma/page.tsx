@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
+import { HACIENDA } from "@/content/projects/hacienda-ras-el-hekma";
 import { PalmHillsLanding } from "./PalmHillsLanding";
+import { SeoJsonLd } from "./SeoJsonLd";
 
 export const metadata: Metadata = {
   title: { absolute: "هاسيندا راس الحكمة — بالم هيلز · الساحل الشمالي" },
   description:
-    "إطلاق هاسيندا راس الحكمة من بالم هيلز على كيلو ٢٣٨ راس الحكمة: شاطئ ٤.٨ كم، خليجين طبيعيين، وحدات بفيو بحري. تواصل واتساب أو اتصل بنا.",
+    "مشروع هاسيندا راس الحكمة (Hacienda Ras El Hekma) من Palm Hills Egypt على الساحل الشمالي — هاسيندا ويست، هاسيندا ووترز، هاسيندا باي. شاطئ ٤.٨ كم، تقسيط حتى ١٠ سنوات، EOI من ٢٥٠ ألف جنيه.",
+  keywords: [...HACIENDA.seo.keywords],
   openGraph: {
-    title: "هاسيندا راس الحكمة — بالم هيلز · الساحل الشمالي",
+    title: "هاسيندا راس الحكمة — Palm Hills North Coast",
     description:
-      "هاسيندا راس الحكمة: ١٬٤٠٠ فدان، شاطئ ٤.٨ كم، تقسيط حتى ١٠ سنوات، وتشطيب فُل فينِش.",
+      "Hacienda Ras El Hekma location: كيلو ٢٣٨ راس الحكمة. Palm Hills Hacienda Ras El Hekma — وحدات، أسعار، وبروشور هاسيندا ويست وHacienda Waters.",
     images: [
       {
         url: "/hacienda/brochure/hero-render.webp",
@@ -43,6 +46,7 @@ export default function Page() {
         href="/prototype/fonts/fraunces_6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2"
         crossOrigin="anonymous"
       />
+      <SeoJsonLd />
       <PalmHillsLanding />
     </>
   );

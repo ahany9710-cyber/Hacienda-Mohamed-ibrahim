@@ -140,8 +140,7 @@ export function LeadForm() {
               <span className="ph-serif-accent">خصم اللونش</span>
             </h2>
             <p className="ph-lede mt-5">
-              هيرد عليك فريق المبيعات في خلال دقايق — أو كمّل المحادثة على
-              واتساب لو محتاج رد أسرع.
+              {HACIENDA.sections.leadForm.lede}
             </p>
             <div className="trust-line">
               <span>رد سريع</span>

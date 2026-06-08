@@ -26,22 +26,37 @@ export const UNIT_TYPES_LABEL =
 export const ZONES = HACIENDA.sisterProjects.map((zone) => ({
   id: zone.id,
   name: zone.nameAr,
-  tags: ["هاسيندا راس الحكمة", "راس الحكمة", "بالم هيلز"],
+  tags:
+    zone.id === "bay"
+      ? ["Hacienda Bay", "هاسيندا باي", "بالم هيلز"]
+      : zone.id === "white"
+        ? [
+            "قرية هاسيندا ويست",
+            "Hacienda West",
+            "هاسيندا ويست الساحل الشمالي",
+          ]
+        : zone.id === "blue"
+          ? [
+              "هاسيندا ووترز راس الحكمة",
+              "Hacienda Waters",
+              "Palm Hills North Coast",
+            ]
+          : ["Hacienda Red", "هاسيندا ريد", "Palm Hills"],
   description:
     zone.id === "bay"
-      ? "هاسيندا باي — وجهة ساحلية ضمن منظومة هاسيندا على البحر المتوسط، بإطلالات مائية ومرافق متكاملة."
+      ? "Hacienda Bay — وجهة ساحلية ضمن منظومة Hacienda Palm Hills على البحر المتوسط، بإطلالات مائية ومرافق متكاملة في راس الحكمة."
       : zone.id === "white"
-        ? "هاسيندا وايت — أسلوب حياة ساحلي راقٍ ضمن مشروع هاسيندا راس الحكمة على كيلو ٢٣٨."
+        ? "قرية هاسيندا ويست الساحل الشمالي (Hacienda West Ras El Hekma) — أسلوب حياة ساحلي راقٍ ضمن مشروع هاسيندا راس الحكمة. للأسعار وHacienda West brochure تواصل مع فريق المبيعات."
         : zone.id === "blue"
-          ? "هاسيندا بلو — مجتمع بحري بمعايير بالم هيلز، ضمن أكبر مدينة ساحلية مسوّرة على راس الحكمة."
-          : "هاسيندا ريد — تجربة سكنية فاخرة على الشاطئ ضمن منظومة هاسيندا المتكاملة.",
+          ? "هاسيندا ووترز راس الحكمة (Hacienda Waters North Coast) — مجتمع بحري بمعايير بالم هيلز. اطلب Hacienda Waters master plan والتفاصيل عبر النموذج."
+          : "هاسيندا ريد (Hacienda Red Developer) — تجربة سكنية فاخرة على الشاطئ ضمن منظومة هاسيندا المتكاملة من Palm Hills Egypt.",
   image: zone.photo,
 }));
 
 export const FAQS = [
   {
     question: "هل التقسيط متاح؟",
-    answer: `نعم. خطة السداد في هاسيندا راس الحكمة: ${HACIENDA.paymentPlan.downPayment} مع ${HACIENDA.paymentPlan.installment}. فريق المبيعات يساعدك في اختيار الخطة المناسبة لميزانيتك.`,
+    answer: `نعم. خطة السداد في هاسيندا راس الحكمة من بالم هيلز (Palm Hills): ${HACIENDA.paymentPlan.downPayment} مع ${HACIENDA.paymentPlan.installment}. فريق المبيعات يساعدك في اختيار الخطة المناسبة لميزانيتك.`,
   },
   {
     question: "ما هو جدول التسليم؟",
@@ -49,15 +64,30 @@ export const FAQS = [
   },
   {
     question: "ما أنواع الوحدات المتاحة؟",
-    answer: `التشكيلة تشمل ${UNIT_TYPES_LABEL}. الأسعار تبدأ من ${HACIENDA.prices.apartment} للشقق و${HACIENDA.prices.chalet} للشاليهات — حسب المرحلة والخطة.`,
+    answer: `التشكيلة تشمل ${UNIT_TYPES_LABEL} ضمن مشروع Palm Hills Hacienda Ras El Hekma. الأسعار تبدأ من ${HACIENDA.prices.apartment} للشقق و${HACIENDA.prices.chalet} للشاليهات — حسب المرحلة والخطة.`,
   },
   {
     question: "ما نوع التشطيب؟",
     answer: `${HACIENDA.finishingNote} — وحدات جاهزة للسكن بمعايير بالم هيلز على الساحل الشمالي.`,
   },
   {
-    question: "أين يقع المشروع؟",
-    answer: `${HACIENDA.location.description}`,
+    question: "أين يقع مشروع هاسيندا راس الحكمة؟",
+    answer: `${HACIENDA.location.description} للمزيد عن Hacienda Ras El Hekma location وHacienda West location تواصل معنا.`,
+  },
+  {
+    question: "ما علاقة هاسيندا ويست وهاسيندا ووترز بالمشروع؟",
+    answer:
+      "هاسيندا راس الحكمة هو المشروع الرئيسي على كيلو ٢٣٨. قرية هاسيندا ويست الساحل الشمالي (Hacienda West North Coast) وهاسيندا ووترز راس الحكمة (Hacienda Waters) وهاسيندا باي (Hacienda Bay) ضمن منظومة Hacienda Palm Hills من شركة بالم هيلز مصر.",
+  },
+  {
+    question: "كيف أحصل على بروشور هاسيندا ويست أو Hacienda Waters؟",
+    answer:
+      "سجّل بياناتك في نموذج الاستفسار بالأسفل لتحصل على البروشور، Hacienda West brochure، وHacienda Waters master plan مع أحدث الأسعار وخطط السداد من فريق Palm Hills.",
+  },
+  {
+    question: "هل المشروع من شركة Palm Hills؟",
+    answer:
+      "نعم. مشروع هاسيندا راس الحكمة (Palm Hills Hacienda Ras El Hekma) مطوّر من بالم هيلز (Palm Hills Egypt) بالشراكة مع ميران هيلز — من أبرز مطوري العقارات في مصر والساحل الشمالي.",
   },
   {
     question: "كيف يمكنني زيارة الموقع؟",

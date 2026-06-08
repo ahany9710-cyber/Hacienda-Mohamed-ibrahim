@@ -43,6 +43,9 @@ export function HeroInfoCard() {
               <p className="ph-serif text-base md:text-lg text-terracotta">
                 {HACIENDA.masterplan.acres.toLocaleString("ar-EG")} فدان
               </p>
+              <p className="ph-mono-label mt-1 text-ink/55 normal-case tracking-normal text-[0.7rem]">
+                {HACIENDA.developer} · Palm Hills
+              </p>
             </div>
             <div className="p-3 md:p-4 text-center md:text-right flex flex-col justify-center">
               <p className="ph-mono-label mb-1">انواع الوحدات</p>

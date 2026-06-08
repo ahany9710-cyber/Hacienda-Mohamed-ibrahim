@@ -79,7 +79,7 @@ export function Hero() {
             className="text-center px-4"
           >
             <p className="ph-eyebrow justify-center mb-4 text-terracotta">
-              {HACIENDA.projectName}
+              {HACIENDA.hero.eyebrow}
             </p>
             <h1 className="ph-hero-ar mb-2">
               {HACIENDA.hero.headlineDark}
@@ -90,8 +90,11 @@ export function Hero() {
             <p className="ph-hero-sub mb-6 max-w-2xl mx-auto" dir="ltr" lang="en">
               — {HACIENDA.hero.taglineEn} —
             </p>
-            <p className="ph-hero-desc mb-8">
+            <p className="ph-hero-desc mb-4">
               {HACIENDA.hero.valueProp}
+            </p>
+            <p className="ph-mono-label justify-center mb-8 text-bone/75 normal-case tracking-wider">
+              {HACIENDA.hero.trustLine}
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

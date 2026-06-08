@@ -27,12 +27,13 @@ export const HACIENDA = {
   },
 
   hero: {
+    eyebrow: "بالم هيلز · Palm Hills",
     headlineDark: "هاسيندا راس الحكمة",
     headlineAccent: "Unlike Anywhere",
     taglineEn: "The Mediterranean's Most Extraordinary Shoreline",
     valueProp:
-      "أول مدينة ساحلية مسوّرة من بالم هيلز على كيلو ٢٣٨ — ١٬٤٠٠ فدان، شاطئ ٤.٨ كم على المتوسط، ٨٦٪ مساحات خضراء ومائية، وتشطيب فُل فينِش.",
-    trustLine: "بالم هيلز × ميران هيلز — منذ ١٩٩٧",
+      "أول مدينة ساحلية مسوّرة من بالم هيلز (Palm Hills) على كيلو ٢٣٨ — ١٬٤٠٠ فدان، شاطئ ٤.٨ كم على المتوسط، ٨٦٪ مساحات خضراء ومائية، وتشطيب فُل فينِش.",
+    trustLine: "بالم هيلز × ميران هيلز — Palm Hills · منذ ١٩٩٧",
     heroImage: "/hacienda/brochure/hero-render.webp",
     heroAlt: "هاسيندا راس الحكمة — render رسمي من البروشور",
     infoCardDisney: {
@@ -106,9 +107,10 @@ export const HACIENDA = {
   location: {
     title: "الموقع والوصول",
     description:
-      "على شاطئ راس الحكمة — اتصال مباشر بطريق الإسكندرية–مطروح الساحلي، وقرب مطار العلمين الدولي. هدوء منتجع حصري مع سهولة الوصول للبحر المتوسط.",
+      "مشروع هاسيندا راس الحكمة (Hacienda Ras El Hekma) على شاطئ راس الحكمة — كيلو ٢٣٨ على الساحل الشمالي. اتصال مباشر بطريق الإسكندرية–مطروح الساحلي، وقرب مطار العلمين الدولي. موقع استراتيجي ضمن Palm Hills North Coast مع سهولة الوصول للبحر المتوسط.",
     image: "/hacienda/brochure/location-map.webp",
-    imageAlt: "خريطة موقع هاسيندا راس الحكمة والمسافات",
+    imageAlt:
+      "Hacienda Ras El Hekma location — خريطة موقع هاسيندا راس الحكمة والمسافات",
     distances: [
       { km: "110", label: "New Alamein" },
       { km: "124", label: "Alamein International Airport" },
@@ -139,7 +141,7 @@ export const HACIENDA = {
   masterplan: {
     title: "فلسفة الماستر بلان",
     description:
-      "تصميم يتفاعل مع البحر والبر — حيث اللاندسكيب والعمران والمساحات المفتوحة والواجهة البحرية تتكامل في نظام واحد يحافظ على جمال الساحل المتوسط.",
+      "تصميم بالم هيلز يتفاعل مع البحر والبر — حيث اللاندسكيب والعمران والمساحات المفتوحة والواجهة البحرية تتكامل في ماستر بلان Palm Hills North Coast يحافظ على جمال الساحل المتوسط.",
     acres: 1400,
     shorelineKm: 4.8,
     greenWaterPercent: 86,
@@ -151,7 +153,7 @@ export const HACIENDA = {
   shoreline: {
     title: "تجربة الشاطئ",
     description:
-      "٤.٨ كم من الشاطئ الرملي — مياه صافية، مشغّلين عالميين، مطاعم مميزة، ورياضات مائية في أجواء barefoot luxury على المتوسط.",
+      "وحدات بالم هيلز على ٤.٨ كم من الشاطئ الرملي — مياه صافية، مشغّلين عالميين، مطاعم مميزة، ورياضات مائية في أجواء barefoot luxury على المتوسط بمعايير Palm Hills.",
     image: "/hacienda/brochure/shoreline.webp",
     imageAlt: "شاطئ هاسيندا راس الحكمة",
   },
@@ -349,6 +351,30 @@ export const HACIENDA = {
     },
   ] as const,
 
+  sections: {
+    units: {
+      lede:
+        "وحدات سكنية من بالم هيلز (Palm Hills) على شاطئ راس الحكمة — تشطيب فُل فينِش، خطط سداد مرنة، وإطلالات متوسطية استثنائية.",
+      unitTagline: "بالم هيلز · Palm Hills | هاسيندا راس الحكمة | كيلو ٢٣٨",
+    },
+    architecture: {
+      ledeAr:
+        "معمار وتصميم بمعايير بالم هيلز على الساحل الشمالي — حيث يتكامل العمران مع الطبيعة في وجهة Palm Hills Hacienda Ras El Hekma.",
+    },
+    zones: {
+      lede:
+        "اكتشف مناطق مشروع هاسيندا راس الحكمة من بالم هيلز (Palm Hills) — ويست، ووترز، باي، وريد ضمن منظومة Hacienda Palm Hills.",
+    },
+    leadForm: {
+      lede:
+        "فريق مبيعات بالم هيلز (Palm Hills) هيرد عليك في خلال دقايق — أو كمّل المحادثة على واتساب لو محتاج رد أسرع.",
+    },
+    faq: {
+      lede:
+        "إجابات عن مشروع هاسيندا راس الحكمة من بالم هيلز (Palm Hills) على الساحل الشمالي — التقسيط، التسليم، والوحدات.",
+    },
+  },
+
   formUnitTypes: [
     "شقة",
     "شاليه",
@@ -357,6 +383,49 @@ export const HACIENDA = {
     "Branded Residences",
     "غير محدد",
   ] as const,
+
+  seo: {
+    keywords: [
+      "مشروع هاسيندا راس الحكمة",
+      "هاسيندا راس الحكمة",
+      "هاسيندا راس الحكمه",
+      "هاسيندا رأس الحكمة",
+      "hacienda ras el hekma",
+      "hacienda ras elhekma",
+      "hacienda ras el hekma location",
+      "بالم هيلز راس الحكمة",
+      "بالم هيلز",
+      "بالم هيلز مصر",
+      "palm hills",
+      "palm hills egypt",
+      "palm hills north coast",
+      "palm hills sahel",
+      "palm hills ras el hekma",
+      "palm hills hacienda ras el hekma",
+      "hacienda palm hills",
+      "قرية هاسيندا ويست",
+      "هاسيندا ويست راس الحكمة",
+      "هاسيندا ويست الساحل الشمالي",
+      "hacienda west ras el hekma",
+      "hacienda west north coast",
+      "hacienda west location",
+      "hacienda west prices",
+      "hacienda west brochure",
+      "هاسيندا ووترز راس الحكمة",
+      "hacienda waters north coast",
+      "hacienda waters brochure",
+      "hacienda waters master plan",
+      "hacienda bay",
+      "hacienda red developer",
+      "شركة palm hills",
+    ] as const,
+    contextParagraphs: [
+      "مشروع هاسيندا راس الحكمة من شركة بالم هيلز مصر (Palm Hills Egypt) على الساحل الشمالي — ضمن محفظة Palm Hills North Coast وPalm Hills Sahel. يجمع Hacienda Palm Hills بين شاطئ المتوسط وماستر بلان متكامل على كيلو ٢٣٨.",
+      "منظومة هاسيندا تشمل قرية هاسيندا ويست الساحل الشمالي (Hacienda West)، هاسيندا ووترز راس الحكمة (Hacienda Waters North Coast)، هاسيندا باي (Hacienda Bay)، وهاسيندا ريد (Hacienda Red Developer). للاستفسار عن Hacienda West prices أو Hacienda Waters master plan وHacienda West brochure، سجّل بياناتك في النموذج.",
+      "للبحث عن Hacienda Ras El Hekma location أو Hacienda West location: المشروع على شاطئ راس الحكمة برأس الحكمة (Hacienda Ras El Hekma / Hacienda Ras Elhekma) — أول مدينة ساحلية مسوّرة من بالم هيلز. Palm Hills Hacienda Ras El Hekma متاحة للحجز المبكر بـ EOI.",
+    ] as const,
+    detailsSummary: "معلومات إضافية عن هاسيندا راس الحكمة ومنظومة بالم هيلز",
+  },
 
   whatsappPresets: {
     default: WHATSAPP_DEFAULT_MSG,

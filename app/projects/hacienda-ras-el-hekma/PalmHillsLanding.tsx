@@ -11,6 +11,7 @@ import { ZonesCarousel } from "./components/ZonesCarousel";
 import { LocationSection } from "./components/LocationSection";
 import { LeadForm } from "./components/LeadForm";
 import { FAQ } from "./components/FAQ";
+import { SeoContext } from "./components/SeoContext";
 import { Footer } from "./components/Footer";
 import { FloatingActionBar } from "./components/FloatingActionBar";
 
@@ -27,6 +28,7 @@ export function PalmHillsLanding() {
         <LocationSection />
         <LeadForm />
         <FAQ />
+        <SeoContext />
       </main>
       <Footer />
       <FloatingActionBar />

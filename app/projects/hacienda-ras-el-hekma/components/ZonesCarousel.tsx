@@ -24,14 +24,16 @@ export function ZonesCarousel() {
       <div className="mx-auto w-full max-w-7xl">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 md:mb-8">
           <div>
-            <p className="ph-eyebrow mb-2" lang="en">
-              Zones
+            <p className="ph-eyebrow mb-2">
+              <span lang="en">Zones</span>
+              <span className="sep" aria-hidden="true" />
+              <span>Palm Hills</span>
             </p>
             <h2 className="ph-h2 mb-2" lang="en">
               Project Zones
             </h2>
             <p className="ph-lede">
-              اكتشف مناطق مشروع {HACIENDA.projectName}
+              {HACIENDA.sections.zones.lede}
             </p>
           </div>
           <motion.button

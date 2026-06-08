@@ -25,6 +25,10 @@ export function LocationSection() {
             </h2>
 
             <div className="ph-location-meta justify-center lg:justify-start mb-6">
+              <span className="ph-location-chip">{HACIENDA.developer}</span>
+              <span className="ph-location-chip" lang="en">
+                Palm Hills
+              </span>
               <span className="ph-location-chip">{HACIENDA.projectName}</span>
               <span className="ph-location-chip ph-location-chip-accent">
                 كيلو ٢٣٨

@@ -22,7 +22,7 @@ const listings = CAROUSEL_UNIT_ORDER.map((unitId) => {
     image: HACIENDA.homepageUnitImages[unitId],
     imageAlt: unit.imageAlt,
     eoiAmount: HACIENDA.eoiBooking,
-    tagline: `${HACIENDA.projectName} | كيلو ٢٣٨ راس الحكمة`,
+    tagline: HACIENDA.sections.units.unitTagline,
     downpayment: HACIENDA.paymentPlan.downPayment,
     installment: HACIENDA.paymentPlan.installment,
     delivery: HACIENDA.delivery,
@@ -50,14 +50,16 @@ export function UnitsCarousel() {
     <section className="w-full px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-8 md:pb-12 lg:pb-20">
       <div className="container mx-auto">
         <div className="text-center mb-6 md:mb-12">
-          <p className="ph-eyebrow justify-center mb-3" lang="en">
-            Units
+          <p className="ph-eyebrow justify-center mb-3">
+            <span lang="en">Units</span>
+            <span className="sep" aria-hidden="true" />
+            <span>بالم هيلز · Palm Hills</span>
           </p>
           <h2 className="ph-h2 mb-3 md:mb-4">
             شاليهات و فيلات كاملة التشطيب
           </h2>
           <p className="ph-lede mb-3 md:mb-4">
-            {HACIENDA.shoreline.description}
+            {HACIENDA.sections.units.lede}
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-sand border border-[rgba(27,58,75,0.14)] rounded">
             <span className="ph-mono-label text-terracotta normal-case tracking-wider">

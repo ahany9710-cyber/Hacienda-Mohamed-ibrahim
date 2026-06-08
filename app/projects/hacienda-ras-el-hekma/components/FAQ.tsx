@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { HACIENDA } from "@/content/projects/hacienda-ras-el-hekma";
 import { CALL_HREF, FAQS, PHONE_DISPLAY, WA_HREF } from "../landing-constants";
 
 export function FAQ() {
@@ -28,7 +29,7 @@ export function FAQ() {
             الأسئلة الشائعة
           </h2>
           <p className="ph-lede">
-            ابحث عن إجابات للأسئلة الشائعة حول عقاراتنا
+            {HACIENDA.sections.faq.lede}
           </p>
         </motion.div>
 
