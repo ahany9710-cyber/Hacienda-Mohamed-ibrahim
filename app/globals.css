@@ -17,6 +17,15 @@
   --color-navy: var(--navy);
   --color-gold: var(--gold);
   --color-muted: var(--muted);
+  --color-sand: #ede7dc;
+  --color-bone: #f6f1e8;
+  --color-pearl: #faf6ee;
+  --color-ink: #1b3a4b;
+  --color-ink-2: #2d4a5a;
+  --color-terracotta: #c66a4b;
+  --color-terracotta-d: #a75539;
+  --color-sage: #8a9b7c;
+  --color-wa: #25d366;
   --font-mono: ui-monospace, monospace;
 }
 

@@ -35,6 +35,10 @@ export const HACIENDA = {
     trustLine: "بالم هيلز × ميران هيلز — منذ ١٩٩٧",
     heroImage: "/hacienda/brochure/hero-render.webp",
     heroAlt: "هاسيندا راس الحكمة — render رسمي من البروشور",
+    infoCardDisney: {
+      label: "ترفيه عالمي",
+      value: "أرض ديزني لاند برأس الحكمة",
+    },
   },
 
   /** Official launch prices (starting from, subject to change by developer) */
@@ -51,6 +55,17 @@ export const HACIENDA = {
   paymentPlan: {
     downPayment: "٥٪ مقدم + ٥٪ بعد ٣ شهور",
     installment: "تقسيط حتى ١٠ سنوات",
+  },
+
+  eoiBooking: "٢٥٠ ألف جنيه",
+
+  /** صور بطاقات الوحدات — نفس مسارات الصفحة الرئيسية (prototype/index.html · residences) */
+  homepageUnitImages: {
+    ultra_villa: "/hacienda/brochure/unit-ultra-villa.webp",
+    chalet: "/hacienda/brochure/unit-chalet.webp",
+    twin: "/hacienda/brochure/unit-twin.webp",
+    apartment: "/hacienda/brochure/unit-apartment.webp",
+    branded: "/hacienda/brochure/unit-apartment.webp",
   },
 
   delivery: "الاستلام بعد ٤ سنوات",
@@ -230,7 +245,7 @@ export const HACIENDA = {
       typeAr: "Branded Residences",
       priceKey: "branded" as const,
       waPreset: "unit_branded",
-      image: "/hacienda/brochure/unit-branded.webp",
+      image: "/hacienda/brochure/unit-apartment.webp",
       imageAlt: "Branded Residences — هاسيندا راس الحكمة",
     },
   ] as const,
