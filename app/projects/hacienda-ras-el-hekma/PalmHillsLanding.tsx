@@ -14,10 +14,12 @@ import { FAQ } from "./components/FAQ";
 import { SeoContext } from "./components/SeoContext";
 import { Footer } from "./components/Footer";
 import { FloatingActionBar } from "./components/FloatingActionBar";
+import { AnchorScroll } from "./components/AnchorScroll";
 
 export function PalmHillsLanding() {
   return (
     <div className="ph-edit min-h-screen bg-sand">
+      <AnchorScroll />
       <Header />
       <main>
         <Hero />

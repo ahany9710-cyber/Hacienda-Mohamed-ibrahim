@@ -1,4 +1,5 @@
 .ph-edit {
+  scroll-padding-top: 72px;
   --ink: #1b3a4b;
   --ink-soft: rgba(27, 58, 75, 0.82);
   --ink-mute: rgba(27, 58, 75, 0.68);
@@ -1067,13 +1068,24 @@
   }
 }
 
+.ph-edit #hero,
+.ph-edit #units,
+.ph-edit #architecture-design,
+.ph-edit #project-zones,
+.ph-edit #location-map,
+.ph-edit #lead-form,
+.ph-edit #inquiry-form {
+  scroll-margin-top: 72px;
+}
+
 @media (max-width: 767px) {
   .ph-edit {
     padding-bottom: 108px;
     scroll-padding-bottom: 108px;
   }
 
-  .ph-edit #lead-form {
+  .ph-edit #lead-form,
+  .ph-edit #inquiry-form {
     scroll-margin-bottom: 108px;
   }
 }

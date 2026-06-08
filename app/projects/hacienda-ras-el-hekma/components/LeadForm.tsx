@@ -179,7 +179,12 @@ export function LeadForm() {
             </div>
           </div>
 
-          <form className="form-card" onSubmit={handleSubmit} noValidate>
+          <form
+            id="inquiry-form"
+            className="form-card scroll-mt-24"
+            onSubmit={handleSubmit}
+            noValidate
+          >
             <h3 className="form-head">
               ٤ معلومات بس — وفريقنا في انتظار اتصالك
             </h3>

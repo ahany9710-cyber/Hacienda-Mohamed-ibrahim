@@ -47,7 +47,10 @@ export function UnitsCarousel() {
   const currentListing = listings[currentIndex];
 
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-8 md:pb-12 lg:pb-20">
+    <section
+      id="units"
+      className="w-full px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-8 md:pb-12 lg:pb-20 scroll-mt-24"
+    >
       <div className="container mx-auto">
         <div className="text-center mb-6 md:mb-12">
           <p className="ph-eyebrow justify-center mb-3">

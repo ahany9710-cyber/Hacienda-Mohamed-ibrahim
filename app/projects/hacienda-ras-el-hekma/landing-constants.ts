@@ -7,12 +7,29 @@ export const WA_MSG = (msg: string) => `/r/hh-wa?msg=${encodeURIComponent(msg)}`
 
 export const PHONE_DISPLAY = "+20 100 890 0076";
 
+export const UNITS_HREF = "#units";
 export const LEAD_FORM_HREF = "#lead-form";
+export const INQUIRY_FORM_HREF = "#inquiry-form";
 
-export function scrollToLeadForm() {
-  const el = document.getElementById("lead-form");
+function scrollToId(id: string) {
+  const el = document.getElementById(id);
   if (!el) return;
   el.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (typeof window !== "undefined") {
+    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#${id}`);
+  }
+}
+
+export function scrollToUnits() {
+  scrollToId("units");
+}
+
+export function scrollToLeadForm() {
+  scrollToId("lead-form");
+}
+
+export function scrollToInquiryForm() {
+  scrollToId("inquiry-form");
 }
 
 export function navigateToLeadForm(e?: { preventDefault(): void }) {

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { HACIENDA } from "@/content/projects/hacienda-ras-el-hekma";
-import { scrollToLeadForm } from "../landing-constants";
+import { scrollToUnits } from "../landing-constants";
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -104,7 +104,7 @@ export function Hero() {
             >
               <motion.button
                 type="button"
-                onClick={scrollToLeadForm}
+                onClick={scrollToUnits}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="ph-btn ph-btn-primary px-8 py-4 text-lg"
