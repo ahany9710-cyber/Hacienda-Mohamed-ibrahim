@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { HACIENDA } from "@/content/projects/hacienda-ras-el-hekma";
 import { CALL_HREF, WA_HREF } from "../landing-constants";
-import { FORMSPREE_LEAD_ENDPOINT } from "@/lib/formspree";
+import { submitLeadAndRedirect } from "@/lib/submit-lead";
 import { normalizePhone } from "@/lib/validation";
 
 const UNIT_OPTIONS = [
@@ -30,7 +29,6 @@ interface FormErrors {
 }
 
 export function LeadForm() {
-  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     phoneNumber: "",
@@ -85,37 +83,7 @@ export function LeadForm() {
       payload.additional_phone = formData.confirmPhoneNumber.trim();
     }
 
-    try {
-      const res = await fetch(FORMSPREE_LEAD_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-      const data = (await res.json().catch(() => ({}))) as {
-        error?: string;
-        errors?: Record<string, string>;
-      };
-
-      if (!res.ok) {
-        const msg =
-          (typeof data.error === "string" && data.error) ||
-          Object.values(data.errors ?? {})[0] ||
-          "تعذر إرسال النموذج. حاول مرة أخرى.";
-        setErrors({ form: msg });
-        return;
-      }
-
-      router.push("/thank-you");
-    } catch {
-      setErrors({
-        form: "حدث خطأ في الاتصال. تحقق من الإنترنت وحاول مجدداً.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    submitLeadAndRedirect(payload);
   };
 
   return (
