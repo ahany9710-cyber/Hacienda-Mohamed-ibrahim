@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { HACIENDA } from "@/content/projects/hacienda-ras-el-hekma";
 import { CALL_HREF, WA_HREF } from "../landing-constants";
 import { FORMSPREE_LEAD_ENDPOINT } from "@/lib/formspree";
-import { isValidEgyptPhone, normalizePhone } from "@/lib/validation";
+import { normalizePhone } from "@/lib/validation";
 
 const UNIT_OPTIONS = [
   "غير محدد",
@@ -59,9 +59,6 @@ export function LeadForm() {
     }
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = "رقم الموبايل مطلوب";
-    } else if (!isValidEgyptPhone(formData.phoneNumber)) {
-      newErrors.phoneNumber =
-        "رقم هاتف صحيح مطلوب (مصر، السعودية، البحرين، الإمارات، قطر)";
     }
 
     setErrors(newErrors);
